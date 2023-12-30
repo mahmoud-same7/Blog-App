@@ -50,7 +50,7 @@ module.exports.Login = async_handler(async(req,res)=> {
     if(error){
         return res.status(400).json({msg:error.details[0].message})
     }
-    // check user Already register 
+    // check user Already register // tets git add
     let user = await User.findOne({email:req.body.email})
     if(!user) {
         return res.status(400).json({msg:'please register'})
